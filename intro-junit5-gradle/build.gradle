@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'guru.springframework'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile('org.junit.jupiter:junit-jupiter-api:5.8.2')
+    testCompile('org.junit.jupiter:junit-jupiter-engine:5.8.2')
+
+}
+
+test {
+    useJUnitPlatform()
+//    gradle don't log too much so we need this
+    testLogging.showStandardStreams = true
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
